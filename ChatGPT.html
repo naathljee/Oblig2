@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halden Coffee</title>
+  <style>
+    /* ====== BASIC STYLES ====== */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f7f3;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #3e2f1c;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      background-color: #5b442b;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #d4b483;
+    }
+
+    /* ====== HERO SECTION ====== */
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1500&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .hero p {
+      font-style: italic;
+      font-size: 1.2rem;
+      background: rgba(0, 0, 0, 0.4);
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+
+    /* ====== ABOUT SECTION ====== */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #3e2f1c;
+      margin-bottom: 20px;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 250px;
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: #3e2f1c;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    ☕ Halden Coffee ☕
+    <img src = "Firefly_Creative logo for “Halden Coffee & Co”, a student-run café that serves organic and lo 504598.jpg">
+
+  </header>
+
+  <nav>
+    <a href="#om">Om oss</a>
+    <a href="#produkter">Produkter</a>
+    <a href="#baerekraft">Bærekraft</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Velkommen til Halden Coffee – en lokal kaffebar drevet av studenter med lidenskap for bærekraft og ekte håndverk. Vi serverer økologisk kaffe, hjemmelagde bakverk og et smil – hver eneste dag.</h1>
+    <p>“En kopp bærekraft, rett fra hjertet av Halden.”</p>
+  </section>
+
+  <section id="om">
+    <h2>Om oss</h2>
+    <p>Halden Coffee er et studentdrevet initiativ hvor lidenskap for kaffe møter ansvar for miljøet. 
+       Hos oss finner du økologiske kaffebønner, kortreiste råvarer og et fellesskap som bryr seg om både smak og planeten.</p>
+  </section>
+
+  <section id="produkter">
+    <h2>Våre produkter</h2>
+    <div class="products">
+      <div class="product">
+        <img src="Firefly_A cup of organic coffee with latte art, placed on a wooden table next to coffee beans 838145.jpg" alt="Kaffe">
+        <h3>Økologisk kaffe</h3>
+        <p>Brygget med omtanke – fra lokale bønder og rettferdig handel.</p>
+      </div>
+
+      <div class="product">
+        <img src="Firefly_Freshly baked cinnamon buns and pastries made with local ingredients, displayed on a  838145.jpg" alt="Bakverk">
+        <h3>Hjemmelagde bakverk</h3>
+        <p>Friskt fra ovnen hver dag – med kortreiste ingredienser og kjærlighet.</p>
+      </div>
+
+      <div class="product">
+        <img src="Firefly_Student barista serving homemade pastries and organic coffee in reusable cups, smilin 504598.jpg" alt="Vegansk melk">
+        <h3>Bærekraftige alternativer</h3>
+        <p>Velg mellom havre-, mandel- og soyamelk – helt uten plast.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="baerekraft">
+    <h2>Bærekraft</h2>
+    <p>Vi tror at hver kopp teller. Derfor bruker vi kun resirkulerbare kopper, lokale leverandører og fornybar energi. 
+       Vårt mål er å inspirere flere til å nyte kaffe på en grønnere måte.</p>
+  </section>
+
+  <section id="kontakt">
+    <h2>Kontakt oss</h2>
+    <p>📍 Storgata 12, Halden<br>
+       📞 69 12 34 56<br>
+       📧 kontakt@haldencoffee.no</p>
+  </section>
+
+  <footer>
+    © 2025 Halden Coffee – laget med kjærlighet og litt AI 💚
+  </footer>
+
+</body>
+</html>

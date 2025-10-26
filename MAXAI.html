@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halden Coffee</title>
+    <style>
+        /* ====== GENERAL STYLES ====== */
+        :root {
+            --primary-color: #6D8B74;
+            /* Soft Green */
+            --secondary-color: #A2B38B;
+            /* Light Beige/Tan */
+            --accent-color: #E4E4D0;
+            /* Off-White */
+            --text-color: #333;
+            /* Dark Gray */
+            --background-color: #F8F8FF;
+            /* Very Light Gray */
+            --header-footer-color: #4A4A4A;
+            /* Darker Gray */
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Modern, clean font */
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            /* Slightly increased line height for better readability */
+            -webkit-font-smoothing: antialiased;
+            /* Improve font rendering on webkit browsers */
+            -moz-osx-font-smoothing: grayscale;
+            /* Improve font rendering on Firefox */
+        }
+
+        /* ====== HEADER ====== */
+        header {
+            background-color: var(--header-footer-color);
+            color: var(--accent-color);
+            padding: 1.5rem 0;
+            /* Use rem for scalable sizing */
+            text-align: center;
+            font-size: 1.5rem;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            /*Spacing between logo and title*/
+        }
+
+        .logo {
+            max-height: 50px;
+            /*Adjust as needed*/
+        }
+
+        /* ====== NAVIGATION ====== */
+        nav {
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            /* Use rem for spacing */
+            padding: 0.75rem 0;
+        }
+
+        nav a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease-in-out;
+            /* Subtle transition */
+            display: block;
+            /*Make the whole area clickable*/
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            /*Softer corners*/
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Add a subtle background on hover */
+        }
+
+        /* ====== HERO SECTION ====== */
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--accent-color);
+            text-align: center;
+            padding: calc(5rem + 2vw) 1rem;
+            /* Responsive padding */
+            position: relative;
+            /* Needed for the overlay */
+            overflow: hidden;
+            /* Hides any potential overflow */
+        }
+
+        /* Hero Overlay (Modern Look) */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            /* Darken the image */
+            z-index: 1;
+            /* Place it behind the text */
+        }
+
+        .hero>* {
+            /*Select all direct children of .hero*/
+            position: relative;
+            /* Bring content forward */
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: calc(1.75rem + 1vw);
+            /* Responsive font size */
+            max-width: 900px;
+            margin: 0 auto 1.25rem auto;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+            /* subtle shadow for better readability */
+        }
+
+        .hero p {
+            font-style: italic;
+            font-size: calc(1.1rem + 0.2vw);
+            display: inline-block;
+            padding: 0.6rem 1rem;
+            border-radius: 0.4rem;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        /* ====== ABOUT SECTION ====== */
+        section {
+            padding: calc(3rem + 1vw) 1rem;
+            /* Responsive padding */
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            /* Center the sections */
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.25rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        /* ====== PRODUCTS SECTION ====== */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            /* Responsive grid */
+            gap: 1.5rem;
+            padding: 0 1rem;
+        }
+
+        .product {
+            background-color: var(--accent-color);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            /* Softer shadow */
+            padding: 1.5rem;
+            transition: all 0.3s ease-in-out;
+            text-align: left;
+            /*Align text to the left for better readability*/
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            /* Move up slightly */
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            aspect-ratio: 4/3;
+            /*Maintain aspect ratio*/
+            object-fit: cover;
+            /*Ensure images fill the container*/
+        }
+
+        .product h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            color: var(--text-color);
+        }
+
+        .product p {
+            font-size: 0.9rem;
+            color: rgba(51, 51, 51, 0.8);
+        }
+
+        /* ====== FOOTER ====== */
+        footer {
+            background-color: var(--header-footer-color);
+            color: var(--accent-color);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        /* ====== MEDIA QUERIES (Mobile Responsiveness) ====== */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+                padding: 0.75rem;
+                border-radius: 0;
+                /*No rounded corners on small screens*/
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+                /* Stack products on smaller screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="your-logo.jpg" alt="Halden Coffee Logo" class="logo">
+            <h1>Halden Coffee</h1>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#om">Om oss</a>
+        <a href="#produkter">Produkter</a>
+        <a href="#baerekraft">Bærekraft</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Velkommen til Halden Coffee – en lokal kaffebar drevet av studenter med lidenskap for bærekraft og ekte
+            håndverk. Vi serverer økologisk kaffe, hjemmelagde bakverk og et smil – hver eneste dag.</h1>
+        <p>“En kopp bærekraft, rett fra hjertet av Halden.”</p>
+    </section>
+
+    <section id="om">
+        <h2>Om oss</h2>
+        <p>Halden Coffee er et studentdrevet initiativ hvor lidenskap for kaffe møter ansvar for miljøet.
+            Hos oss finner du økologiske kaffebønner, kortreiste råvarer og et fellesskap som bryr seg om både smak og
+            planeten.</p>
+    </section>
+
+    <section id="produkter">
+        <h2>Våre produkter</h2>
+        <div class="products">
+            <div class="product">
+                <img src="Firefly_A cup of organic coffee with latte art, placed on a wooden table next to coffee beans 838145.jpg"
+                    alt="Cup of freshly brewed organic coffee">
+                <h3>Økologisk kaffe</h3>
+                <p>Brygget med omtanke – fra lokale bønder og rettferdig handel.</p>
+            </div>
+
+            <div class="product">
+                <img src="Firefly_Freshly baked cinnamon buns and pastries made with local ingredients, displayed on a  838145.jpg"
+                    alt="Freshly baked cinnamon buns and pastries">
+                <h3>Hjemmelagde bakverk</h3>
+                <p>Friskt fra ovnen hver dag – med kortreiste ingredienser og kjærlighet.</p>
+            </div>
+
+            <div class="product">
+                <img src="Firefly_Student barista serving homemade pastries and organic coffee in reusable cups, smilin 504598.jpg"
+                    alt="Student barista serving pastries and coffee">
+                <h3>Bærekraftige alternativer</h3>
+                <p>Velg mellom havre-, mandel- og soyamelk – helt uten plast.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="baerekraft">
+        <h2>Bærekraft</h2>
+        <p>Vi tror at hver kopp teller. Derfor bruker vi kun resirkulerbare kopper, lokale leverandører og fornybar
+            energi.
+            Vårt mål er å inspirere flere til å nyte kaffe på en grønnere måte.</p>
+    </section>
+
+    <section id="kontakt">
+        <h2>Kontakt oss</h2>
+        <p>📍 Storgata 12, Halden<br>
+            📞 69 12 34 56<br>
+            📧 kontakt@haldencoffee.no</p>
+    </section>
+
+    <footer>
+        © 2025 Halden Coffee – laget med kjærlighet og litt AI 💚
+    </footer>
+
+</body>
+
+</html>
